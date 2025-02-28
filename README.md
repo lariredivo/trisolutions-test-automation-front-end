@@ -47,6 +47,16 @@ npx cypress open
 ## 📊 Test Reports & Screenshots
 - **Mochawesome Report**: Reports are stored in `cypress/reports/`.
 - **Screenshots**: Captured images are stored in `cypress/screenshots/`.
+- To merge reports and generate an HTML file, run:
+```sh
+npx mochawesome-merge cypress/reports/*.json -o cypress/reports/report.json
+npx marge cypress/reports/report.json -o cypress/reports/
+```
+- Open cypress/reports/index.html in your browser.
+
+## 🎥 Test Execution Videos
+- All test execution videos are automatically recorded and stored in `cypress/videos/`.
+- You can watch these videos to review the test execution process.
 
 ## 🎓 Lessons Learned & Challenges
 I am very proud of successfully completing this project. During the development process, I used ChatGPT as a support tool to help with code implementation, but I knew exactly what to ask and how to analyze and locate web elements using the browser's inspector. Additionally, I improved my ability to debug test failures and understand the importance of handling dynamic elements in UI automation. This project significantly enhanced my proficiency in Cypress and strengthened my ability to solve challenges independently.
