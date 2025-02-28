@@ -1,4 +1,4 @@
-# 📌 Test Scenarios (BDD - Gherkin)
+# Test Scenarios (BDD - Gherkin)
 
 This document outlines the test scenarios for **Front-End** automation using BDD (Gherkin syntax).
 
