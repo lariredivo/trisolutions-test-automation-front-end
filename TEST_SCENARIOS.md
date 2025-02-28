@@ -4,9 +4,6 @@ This document outlines the test scenarios for **Front-End** automation using BDD
 
 ---
 
-## **Front-End Test Scenarios (UI - Cypress)**
-
-
 ```gherkin
 Feature: Add a new customer
 
