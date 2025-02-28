@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-28T00:26:13.874Z",
+    "end": "2025-02-28T00:26:32.916Z",
+    "duration": 19042,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "32857532-6727-4901-8f4a-c96aff4190b0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\delete_customer.cy.js",
+      "file": "cypress\\e2e\\delete_customer.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5ed0fe2f-0882-4f42-8bc1-f2f239c8f99f",
+          "title": "Delete Customer Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should delete the customer successfully",
+              "fullTitle": "Delete Customer Test Should delete the customer successfully",
+              "timedOut": null,
+              "duration": 14632,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Step 1: Visit the page\ncy.visit('https://www.grocerycrud.com/v1.x/demo/bootstrap_theme');\n// Step 2: Change the \"Select version\" dropdown to \"Bootstrap V4 Theme\"\ncy.get('#switch-version-select').select('Bootstrap V4 Theme');\n// Step 3: Click the \"Search Name\" column and type the name \"Test Customer\"\ncy.get('input[name=\"customerName\"]').type('Test Customer'); // Search for the customer by name\n// Step 4: Find the row with \"Test Customer\" and click the checkbox\ncy.contains('Test Customer') // Locate the cell with the name \"Test Customer\"\n.parents('tr') // Find the row in the table\n.find('input[type=\"checkbox\"]') // Find the checkbox\n.check(); // Check the checkbox\n// Step 5: Click the \"Delete\" button to delete the selected items\ncy.get('.delete-selected-button').click(); // Click the delete button\n// Step 6: Validate the popup text \"Are you sure that you want to delete this 1 item?\"\ncy.get('.modal-body') // Find the confirmation modal body\n.should('contain', 'Are you sure that you want to delete this 1 item?'); // Validate the popup text\n// Step 7: Click the \"Delete\" button in the confirmation popup\ncy.get('.delete-multiple-confirmation-button').click(); // Click the \"Delete\" button in the confirmation modal\n// Step 8: Wait for the success message and validate the text\ncy.get('div[data-growl=\"container\"]', {\n  timeout: 10000\n}) // Wait for up to 10 seconds for the success message\n.should('be.visible') // Ensure the message is visible\n.and('contain', 'Your data has been successfully deleted from the database.'); // Check the success message text\n// Step 9: Close the browser\ncy.window().then(win => win.close()); // Close the browser",
+              "err": {},
+              "uuid": "e339e569-2490-4498-ad7b-495ff26f7e01",
+              "parentUUID": "5ed0fe2f-0882-4f42-8bc1-f2f239c8f99f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e339e569-2490-4498-ad7b-495ff26f7e01"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14632,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

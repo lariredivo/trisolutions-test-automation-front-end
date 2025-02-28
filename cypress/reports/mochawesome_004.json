@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-28T00:29:29.200Z",
+    "end": "2025-02-28T00:29:55.636Z",
+    "duration": 26436,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e436c9a5-d26d-43db-85f4-3fec7081e693",
+      "title": "",
+      "fullFile": "cypress\\e2e\\add_customer.cy.js",
+      "file": "cypress\\e2e\\add_customer.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d30a401-8af5-479c-998e-39cc7136dc5a",
+          "title": "Add Customer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should successfully add a new customer",
+              "fullTitle": "Add Customer Should successfully add a new customer",
+              "timedOut": null,
+              "duration": 20860,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the page\ncy.visit('https://www.grocerycrud.com/v1.x/demo/bootstrap_theme');\n// Select Bootstrap V5 Theme from the dropdown\ncy.get('#switch-version-select').select('Bootstrap V5 Theme');\n// Click the \"Add Customer\" button\ncy.contains('Add Customer').click();\n// Fill out the customer form with random data\ncy.get('[name=\"customerName\"]').type('Test Customer');\ncy.get('[name=\"contactLastName\"]').type('Smith');\ncy.get('[name=\"contactFirstName\"]').type('John');\ncy.get('[name=\"phone\"]').type('123456789');\ncy.get('[name=\"addressLine1\"]').type('123 Main St');\ncy.get('[name=\"addressLine2\"]').type('Apt 4B');\ncy.get('[name=\"city\"]').type('New York');\ncy.get('[name=\"state\"]').type('NY');\ncy.get('[name=\"postalCode\"]').type('10001');\ncy.get('[name=\"country\"]').type('USA');\n// Select \"Bondur\" from the \"From Employer\" dropdown\ncy.get('.chosen-single').click(); // Open the dropdown\ncy.get('.chosen-results li').contains('Bondur').click(); // Select \"Bondur\"\n// Enter credit limit\ncy.get('[name=\"creditLimit\"]').type('5000');\n// Click the \"Save and Go Back to List\" button\ncy.get('#save-and-go-back-button').click();\n// Wait for success message to appear\ncy.get('span[data-growl=\"message\"]', {\n  timeout: 10000\n}) // Wait up to 10s\n.should('be.visible') // Ensure visibility\n.and('contain', 'Your data has been successfully stored into the database.'); // Validate text",
+              "err": {},
+              "uuid": "5001f986-9ce3-47e3-958e-b6a857b4bb03",
+              "parentUUID": "0d30a401-8af5-479c-998e-39cc7136dc5a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5001f986-9ce3-47e3-958e-b6a857b4bb03"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20860,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
